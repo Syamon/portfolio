@@ -1,23 +1,32 @@
-var myString = "";
-$(document).ready(function(){
-	
+$(function() {
+    $(window).scroll(function() {
+        $('.offer__headding').each(function() {
+            var imagePos = $(this).offset().top;
+
+            var topOfWindow = $(window).scrollTop();
+            if (imagePos < topOfWindow + 150) {
+                $(this).addClass("animate__jello");
+            }
+        });
+    });
+    $(window).scroll(function() {
+        $('.form__input').each(function() {
+            var imagePos = $(this).offset().top;
+
+            var topOfWindow = $(window).scrollTop();
+            if (imagePos < topOfWindow + 650) {
+                $(this).addClass("fadeInLeft");
+            }
+        });
+    });
+    $(window).scroll(function() {
+        $('.input__right').each(function() {
+            var imagePos = $(this).offset().top;
+
+            var topOfWindow = $(window).scrollTop();
+            if (imagePos < topOfWindow + 650) {
+                $(this).addClass("fadeInRight");
+            }
+        });
+    });
 });
-function change_label(){
-	myString = $("#fasad").val();
-	if(myString == "Перевод"){
-		$("#per").show();
-		$("#cn").hide();
-		$("#but_val").hide();
-	}
-	if(myString == "Снятие денег"){
-		$("#cn").show();
-		$("#per").hide();
-		$("#but_val").hide();
-	}
-	if(myString == "Покупка валюты"){
-		$("#but_val").show();
-		$("#cn").hide();
-		$("#per").hide();		
-	}
-}
-	
